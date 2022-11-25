@@ -22,10 +22,59 @@ namespace Exercise_Linked_List_A
         {
             LAST = null;
         }
+        //add Node
         public void addNote()
         {
+            int rollNo;
+            string nm;
+
+            Console.Write("\nEnter the roll number of the student: ");
+            rollNo = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("\nEnter the name of student: ");
+            nm = Console.ReadLine();
+
+            Node newNode = new Node();
+            newNode.rollNumber = rollNo;
+            newNode.name = nm;
+
+            //if the list empty
+            if (listEmpty())
+            {
+                newNode.next = newNode;
+                LAST = newNode;
+            }
+            else if (rollNo < LAST.next.rollNumber)
+            {
+                newNode.next = LAST.next;
+                LAST.next = newNode;
+            }
+            else if (rollNo > LAST.rollNumber)
+            {
+                newNode.next = LAST.next;
+                LAST.next = newNode;
+                LAST = newNode;
+            }
+            else
+            {
+                Node curr, prev;
+                curr = prev = LAST.next;
+                int i = 0;
+                while (i < rollNo - 1)
+                {
+                    prev = curr;
+                    curr = curr.next;
+                    i++;
+                }
+                newNode.next = curr;
+                prev.next = newNode;
+
+
+            }
+
 
         }
+        public bool delNode
         public bool Search(int rollNo, ref Node previous, ref Node current)/*Searches for the specified node*/
         {
             for (previous = current = LAST.next; current != LAST; previous = current,  current = current.next)
