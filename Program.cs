@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercise3_094
+namespace Exercise_Linked_List_A
 {
     internal class Program
     {
