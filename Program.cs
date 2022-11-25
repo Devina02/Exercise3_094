@@ -12,8 +12,13 @@ namespace Exercise_Linked_List_A
         public int rollNumber;
         public string name;
         public Node next;
-        static void Main(string[] args)
+    }
+    class Circularlist
+    {
+        Node LAST;
+        public Circularlist()
         {
+            LAST = null;
         }
     }
 }
